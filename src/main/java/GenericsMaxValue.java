@@ -3,6 +3,9 @@ public class GenericsMaxValue {
        Integer []a ={100, 200, 400};
         Double [] b ={1.1,1.2,1.3};
         String [] c = {"biru","avinash","venkatesh"};
+        printMax(testMaximumInteger(100, 200, 400));
+        printMax(testMaximumDouble(1.1,1.2,1.3));
+        printMax(testMaximumString("biru","avinash","venkatesh"));
     }
     public static <E extends Comparable<E>> E max(E[] list) {
         E max = list[0]; //sets the first value in the array as the current maximum
@@ -11,6 +14,11 @@ public class GenericsMaxValue {
                 max = list[i];
         }
         return max;
+    }
+    private static <E>void toPrint(E[] max) {
+        for (E i:max) {
+            System.out.println(i);
+        }
     }
     public static int testMaximumInteger(Integer x, Integer y, Integer z) {
         Integer max = x;
@@ -32,7 +40,7 @@ public class GenericsMaxValue {
         }
         return max1;
     }
-    public String testMaximumString(String first, String second, String third) {
+    public static String testMaximumString(String first, String second, String third) {
         int max = first.length();
         String letter = first;
         if (second.length() > max) {
@@ -50,9 +58,9 @@ public class GenericsMaxValue {
         System.out.println(" Maximum number is : " + max);
     }
     private static void printMax(double max) {
-        System.out.println(" Maximum number is : " + max);
+        System.out.println(" Maximum double  number is : " + max);
     }
     private static void printMax(String max) {
-        System.out.println(" Maximum number is : " + max);
+        System.out.println(" Maximum String length is : " + max);
     }
 }
