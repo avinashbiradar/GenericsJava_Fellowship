@@ -40,6 +40,23 @@ public class GenericsMaxValueTest {
         Double max1 = findMax.testMaximumDouble(7.00, 23.00, 40.00);
         Assert.assertEquals((Double) 40.00, max1);
     }
+    @Test
+    public void givenFirstLetterAsMaximum_ShouldReturnFirstLetterAsMaximum() {
+        String max2 = findMax.testMaximumString("venkatesh", "avinash", "biru");
+        Assert.assertEquals((String) "venkatesh", max2);
+    }
+
+    @Test
+    public void givenSecondLetterAsMaximum_ShouldReturnSecondLetterAsMaximum() {
+        String max2 = findMax.testMaximumString("avinash", "venkatesh", "biru");
+        Assert.assertEquals((String) "venkatesh", max2);
+    }
+
+    @Test
+    public void givenThirdLetterAsMaximum_ShouldReturnThirdLetterAsMaximum() {
+        String max2 = findMax.testMaximumString("biru", "avinash", "venkatesh");
+        Assert.assertEquals((String) "venkatesh", max2);
+    }
 
 
 }
